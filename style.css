@@ -128,7 +128,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #navbar {
+    #navbar, #anchor {
         height: 20vw;
         flex-direction: row-reverse;
     }
