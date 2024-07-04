@@ -142,6 +142,10 @@ footer {
         font-size: 2.5vw;
     }
 
+    .firstScreen {
+        height: 100dvh;
+    }
+
     .about {
         display: flex;
     }
