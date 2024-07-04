@@ -82,6 +82,9 @@ nav svg path {
     grid-column: 1 / -1;
     font-size: 4vw;
 }
+.about768px {
+    display: none;
+}
 
 #assortmentMenu {
     height: 100vh; width: 100%;
@@ -140,9 +143,24 @@ footer {
     }
 
     .about {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
     }
     .about .item3 {
         display: none;
+    }
+    .item1, .item2, .item3, .item4, .item5 {
+        display: none;
+    }
+    .about768px {
+        display: flex;
+        position: absolute;
+        width: 90%;
+        margin: 0 20px 0 20px;
+        text-align: center;
+        font-size: 5vw;
+    }
+
+    .loadingAddress {
+        font-size: 3vw;
     }
 }
