@@ -18,13 +18,27 @@ window.addEventListener('scroll', function() {
     var sticky = navbar.offsetTop;
     var absolute = anchor.offsetTop;
 
+
     if (window.pageYOffset >= sticky && !isSticky) {
         isSticky = true;
-        navbar.style.position = 'fixed';
         navbar.style.top = 0;
+        navbar.style.position = 'fixed';
     } else if (window.pageYOffset < absolute && isSticky) {
         isSticky = false;
-        navbar.style.position = 'absolute';
         navbar.style.removeProperty('top');
+        navbar.style.position = 'absolute';
     }
+});
+
+document.getElementById('phone').addEventListener('click', function() {
+    var phoneNumber = '+79101276863';
+
+    const input = document.createElement('input');
+    input.setAttribute('value', phoneNumber);
+
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+
+    document.body.removeChild(input);
 });
