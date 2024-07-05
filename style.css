@@ -239,6 +239,8 @@ footer a {
     nav a {
         font-size: 3.5vw;
     }
+    .addressNavPc { display: none; }
+    .addressNavPhone { display: flex !important; }
 
     /* ---------- FIRST SCREEN ---------- */
 
