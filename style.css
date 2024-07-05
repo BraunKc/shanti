@@ -225,6 +225,10 @@ footer a {
 
 @media (max-width: 768px) {
 
+    a, span {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     /* ---------- NAVBAR ---------- */
 
     #navbar, #anchor {
