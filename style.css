@@ -3,6 +3,7 @@
 html, body { height: 100%; width: 100%; padding: 0; margin: 0; background-color: #e6e2d7; }
 html { scroll-behavior: smooth; }
 body { overflow: hidden; font-family: Montserrat Alternates; color: #fdfff5; fill: #fdfff5 }
+a, span { -webkit-tap-highlight-color: transparent; }
 
 /* ---------- NAVBAR ---------- */
 
@@ -225,10 +226,6 @@ footer a {
 
 @media (max-width: 768px) {
 
-    a, span {
-        -webkit-tap-highlight-color: transparent;
-    }
-
     /* ---------- NAVBAR ---------- */
 
     #navbar, #anchor {
@@ -239,8 +236,6 @@ footer a {
     nav a {
         font-size: 3.5vw;
     }
-    .addressNavPc { display: none; }
-    .addressNavPhone { display: flex !important; }
 
     /* ---------- FIRST SCREEN ---------- */
 
