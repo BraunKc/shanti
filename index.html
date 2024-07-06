@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ШАНТИ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link id="style" rel="stylesheet" href="styles/menuStyle.css">
 </head>
 <body>
     <div class="firstScreen">
@@ -38,6 +39,13 @@
         </nav>
     </div>
     <div id="assortmentMenu">
+        <div class="typeBtns">
+            <button class="typeBtn" id="foodBtn" onclick="getFood(this)">ЕДА</button>
+            <button class="typeBtn" id="cocktailsBtn" onclick="getCocktails(this)">КОКТЕЙЛИ</button>
+            <button class="typeBtn" id="alcoholBtn" onclick="getAlcohol(this)">ВИНО / ПИВО</button>
+            <button class="typeBtn" id="noAlcoholBtn" onclick="getNoAlcohol(this)">БЕЗ АЛКО</button>
+        </div>
+        <div id="menu"></div>
     </div>
     <footer>
         <span class="welcomeFooter">Приходите в гости, мы с удовольствием познакомим Вас с Шанти</span>
@@ -55,19 +63,16 @@
             <a class="inst" href="https://www.instagram.com/shanti_lounge?igsh=MWMybDgyeWt4Y3Freg%3D%3D&utm_source=qr" target="newtab">INSTAGRAM*</a>
         </div>
         <div class="container768px" style="display: none;">
-
             <span class="socialSpan">СОЦ СЕТИ</span>
             <div class="social768px">
                 <a class="tg" href="https://t.me/shantinn" target="newtab">TELEGRAM</a>
                 <a class="inst" href="https://www.instagram.com/shanti_lounge?igsh=MWMybDgyeWt4Y3Freg%3D%3D&utm_source=qr" target="newtab">INSTAGRAM*</a>
             </div>
-
             <span class="contactsSpan">КОНТАКТЫ</span>
             <div class="contacts768px">
                 <a class="address" href="https://yandex.ru/maps/-/CDG4YHOp" target="newtab">НИЖНИЙ НОВГОРОД,<br> РОЖДЕСТВЕНСКАЯ, 17</a>
                 <a class="phone" href="tel:+79101276863">+7 (910) 127-68-63</a>
             </div>
-
         </div>
         <div class="shantiFooter">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1176 193" >

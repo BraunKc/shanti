@@ -1,0 +1,109 @@
+#assortmentMenu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10vw;
+    background: #e6e2d7;
+    font-family: Montserrat;
+    color: black;
+}
+
+.typeBtns {
+    display: flex;
+    gap: 25px;
+}
+.typeBtns button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.3vw;
+    color: #00000052;
+    transition: all .1s;
+}
+.typeBtns button:hover {
+    color: #942e19;
+}
+
+#menu {
+    width: 80%;
+    margin: 5vw auto 0;
+    display: grid;
+    gap: 5vw;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1.5fr;
+}
+
+.menuBox {
+    display: grid;
+    column-gap: 5vw;
+}
+.menuBox > span {
+    grid-column: 1 / -1;
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+    font-size: 1.3vw;
+}
+.menuBox > hr {
+    height: 1px; width: 100%;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    background: #000;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+    margin-top: 1vw;
+}
+.menuItem span {
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.foodContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cocktails {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    #assortmentMenu {
+        height: auto;
+        padding: 5vw;
+    }
+
+    #menu {
+        width: 100%;
+        margin: 5vw 0 0;
+    }
+
+    .typeBtns {
+        justify-content: space-between;
+    }
+    .typeBtns button {
+        font-size: 3vw;
+    }
+
+    .menuBox > span {
+        font-size: 3vw;
+    }
+
+    .menuItem {
+        margin-top: 1vw;
+    }
+    .menuItem span {
+        font-size: 2.7vw;
+    }
+    
+    .cocktails {
+        grid-row: 1 / -1;
+        grid-column: 1 / 2;
+    }
+}
