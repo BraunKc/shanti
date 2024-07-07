@@ -67,12 +67,12 @@ storiesPlayer.addEventListener('touchend', function(e) {
 document.addEventListener('DOMContentLoaded', function() {
     const storiesPlayer = document.getElementById('storiesPlayer');
     const sources = [
-        'videos/1.MOV',
-        'videos/2.MOV',
-        'videos/3.MOV',
-        'videos/4.MOV',
-        'videos/5.MOV',
-        'videos/6.MOV'
+        'videos/1.mp4',
+        'videos/2.mp4',
+        'videos/3.mp4',
+        'videos/4.mp4',
+        'videos/5.mp4',
+        'videos/6.mp4'
     ];
     let currentIndex = 0;
 
