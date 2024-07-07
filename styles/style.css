@@ -6,6 +6,17 @@ body { overflow: hidden; font-family: Montserrat Alternates; color: #fdfff5; fil
 a, span, button { -webkit-tap-highlight-color: transparent; }
 * { margin: 0; padding: 0; }
 
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+    width: 1px;
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e6e2d7;
+}
+
 /* ---------- NAVBAR ---------- */
 
 #navbar, #anchor {

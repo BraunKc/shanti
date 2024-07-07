@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ШАНТИ</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link id="style" rel="stylesheet" href="styles/menuStyle.css">
+    <link rel="stylesheet" href="styles/menuStyle.css">
+    <link rel="stylesheet" href="styles/storiesStyle.css">
+
+    <link rel="icon" href="svg/sh.svg" type="image/svg+xml">
 </head>
 <body>
     <div class="firstScreen">
@@ -46,6 +49,26 @@
             <button class="typeBtn" id="noAlcoholBtn" onclick="getNoAlcohol(this)">БЕЗ АЛКО</button>
         </div>
         <div id="menu"></div>
+    </div>
+    <div class="transition first">
+        <svg class="wave" viewBox="0 0 1440 320">
+            <path fill="#e6e2d7" d="M0,160L30,138.7C60,117,120,75,180,74.7C240,75,300,117,360,122.7C420,128,480,96,540,96C600,96,660,128,720,128C780,128,840,96,900,112C960,128,1020,192,1080,213.3C1140,235,1200,213,1260,202.7C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+        </svg>
+    </div>
+    <div id="stories">
+        <div id="storiesScreen">
+            <video id="storiesPlayer" muted autoplay playsinline>
+                <source id="storiesVideo" src="videos/1.MOV" type="video/mp4">
+            </video>
+            <div id="progressContainer">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="transition last">
+        <svg class="wave" viewBox="0 0 1440 320">
+            <path fill="#000" d="M0,160L30,138.7C60,117,120,75,180,74.7C240,75,300,117,360,122.7C420,128,480,96,540,96C600,96,660,128,720,128C780,128,840,96,900,112C960,128,1020,192,1080,213.3C1140,235,1200,213,1260,202.7C1320,192,1380,192,1410,192L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+        </svg>
     </div>
     <footer>
         <span class="welcomeFooter">Приходите в гости, мы с удовольствием познакомим Вас с Шанти</span>
@@ -114,6 +137,7 @@
         </div>
         <a href="https://yandex.ru/maps/-/CDC360yJ" target="newtab" class="loadingAddress">Нижний Новгород, Рождественская, 17</a>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/storiesScript.js"></script>
 </body>
 </html>

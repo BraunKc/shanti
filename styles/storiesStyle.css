@@ -1,0 +1,67 @@
+.transition.first {
+    height: 50vh; width: 100%;
+    background: #000;
+}
+.transition.last {
+    height: 50vh; width: 100%;
+    position: relative;
+    background: #e6e2d7;
+}
+
+#stories {
+    height: 110vh; width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+#storiesScreen {
+    height: 80vh; width: 20vw;
+    display: flex;
+    justify-content: center;
+    transition: all .3s;
+}
+
+#storiesPlayer {
+    height: 100%; width: 100%;
+    display: flex;
+    object-fit: cover;
+    border-radius: 25px;
+    transition: all .3s;
+}
+
+/* ----- PROGRESS BAR ----- */
+
+#progressContainer {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    width: 22vw;
+    height: 5px;
+    border-radius: 25px;
+    background-color: #ffffff52;
+}
+#progressBar {
+    height: 100%; width: 0;
+    border-radius: inherit;
+
+    background-color: #942e19;
+    transition: all .3s;
+}
+
+@media (max-width: 768px) {  
+    .transition {
+        height: 30vh; width: 100%;
+        background: #000;
+    }
+
+    #storiesScreen {
+        height: 80vh; width: 80vw;
+    }
+
+    #progressContainer {
+        width: 80vw;
+    }
+}
