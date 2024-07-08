@@ -7,6 +7,70 @@ progressBar = document.getElementById('progressBar');
 
 var storiesIsActive = false;
 
+var mc = new Hammer(storiesPlayer);
+mc.add(new Hammer.Tap());
+mc.add(new Hammer.Press({ time: 100 }));
+
+document.addEventListener('DOMContentLoaded', function() {
+    const storiesPlayer = document.getElementById('storiesPlayer');
+    const sources = [
+        'videos/1.webm',
+        'videos/2.webm',
+        'videos/3.webm',
+        'videos/4.webm',
+        'videos/5.webm',
+        'videos/6.webm'
+    ];
+    let currentIndex = 0;
+    let isTouching = false;
+
+    function playVideo(index) {
+        storiesPlayer.src = sources[index];
+        storiesPlayer.play();
+    }
+    function nextVideo() {
+        currentIndex = (currentIndex + 1) % sources.length;
+        playVideo(currentIndex);
+    }
+    function prevVideo() {
+        currentIndex = (currentIndex - 1 + sources.length) % sources.length;
+        playVideo(currentIndex);
+    }
+
+    storiesPlayer.addEventListener('ended', nextVideo);
+
+    mc.on('tap press', function(event) {
+        if (!storiesIsActive) return;
+
+        if (event.type === 'tap') {
+            const screenWidth = stories.offsetWidth;
+            const clickX = event.center.x - stories.getBoundingClientRect().left;
+
+            if (!storiesPlayer.paused && clickX > screenWidth / 2) {
+                nextVideo();
+            } else if (storiesPlayer.paused) {
+                storiesPlayer.play();
+            } else {
+                if (storiesPlayer.currentTime > 1) {
+                    storiesPlayer.currentTime = 0;
+                } else {
+                    prevVideo();
+                }
+            }
+        } else if (event.type === 'press') {
+            storiesPlayer.pause();
+            isTouching = true;
+        }
+    });
+
+    mc.on('pressup', function() {
+        if (isTouching) {
+            storiesPlayer.play();
+            isTouching = false;
+        }
+    });
+});
+
 // УМЕНЬШЕНИЕ ВИДЕО
 function storiesWindowed() {
     storiesIsActive = false;
@@ -62,51 +126,6 @@ storiesPlayer.addEventListener('touchend', function(e) {
     endY = e.changedTouches[0].clientY;
     endX = e.changedTouches[0].clientX;
     if (Math.abs(startY - endY) > 10 && Math.abs(startX - endX) < 50) storiesWindowed();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const storiesPlayer = document.getElementById('storiesPlayer');
-    const sources = [
-        'videos/1.webm',
-        'videos/2.webm',
-        'videos/3.webm',
-        'videos/4.webm',
-        'videos/5.webm',
-        'videos/6.webm'
-    ];
-    let currentIndex = 0;
-
-    function playVideo(index) {
-        storiesPlayer.src = sources[index];
-        storiesPlayer.play();
-    }
-    function nextVideo() {
-        currentIndex = (currentIndex + 1) % sources.length;
-        playVideo(currentIndex);
-    }
-    function prevVideo() {
-        currentIndex = (currentIndex - 1 + sources.length) % sources.length;
-        playVideo(currentIndex);
-    }
-
-    storiesPlayer.addEventListener('ended', nextVideo);
-
-    document.getElementById('storiesScreen').addEventListener('click', function(event) {
-        if (!storiesIsActive) return;
-
-        const screenWidth = this.offsetWidth;
-        const clickX = event.offsetX;
-
-        if (clickX > screenWidth / 2) {
-            nextVideo();
-        } else {
-            if (storiesPlayer.currentTime > 1) {
-                storiesPlayer.currentTime = 0;
-            } else {
-                prevVideo();
-            }
-        }
-    });
 });
 
 // ЗАПРЕТ ВЫЗОВА CONTEX MENU
