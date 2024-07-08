@@ -223,13 +223,10 @@ footer a {
     transition: all .5s;
 }
 .shantiLoading {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.shantiLoading svg {
-    fill: inherit;
 }
 .loadingAddress {
     color: inherit;
@@ -266,8 +263,7 @@ footer a {
     .about768px {
         display: flex !important;
         position: absolute;
-        width: 90%;
-        margin: 0 20px 0 20px;
+        width: 100%;
         text-align: center;
         font-size: 5vw;
     }
