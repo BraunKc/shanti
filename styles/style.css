@@ -284,13 +284,9 @@ footer a {
     }
     .container768px {
         display: grid !important;
-        width: 100%;
+        height: auto; width: 100%;
         grid-template-columns: 1fr 1.2fr;
         gap: 50px 10px;
-    }
-    .social768px *, .contacts768px * {
-        text-wrap: nowrap;
-        width: min-content;
     }
     .welcomeFooter {
         width: 70%;
@@ -305,7 +301,10 @@ footer a {
     .social768px, .contacts768px {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 7vw;
+    }
+    .linksFooter *, .social768px *, .contacts768px * {
+        text-wrap: nowrap;
     }
     .disclaimerFooter {
         height: auto;
