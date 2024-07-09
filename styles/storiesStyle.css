@@ -51,6 +51,18 @@
     transition: all .3s;
 }
 
+/* ----- HINT ----- */
+.hint768px { display: none; }
+#storiesHint {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    position: absolute;
+    font-family: Montserrat;
+    right: 0;
+}
+
 @media (max-width: 768px) {  
     .transition {
         height: 30vh; width: 100%;
@@ -64,5 +76,13 @@
     #progressContainer {
         width: 90vw;
         bottom: 10px;
+    }
+    .hint768px { display: flex; }
+    .hintPc { display: none; }
+    #storiesHint {
+        padding: 10px;
+        background: #00000052;
+        border-radius: 25px;
+        right: auto;
     }
 }

@@ -4,6 +4,7 @@ storiesPlayer = document.getElementById('storiesPlayer');
 storiesVideo = document.getElementById('storiesVideo');
 progressContainer = document.getElementById('progressContainer');
 progressBar = document.getElementById('progressBar');
+hint = document.getElementById('storiesHint');
 
 var storiesIsActive = false;
 
@@ -83,8 +84,18 @@ function storiesWindowed() {
 }
 
 // ОТКРЫТИЕ ВИДЕО НА ВЕСЬ ЭКРАН
+let isHintOn = true;
+let isHintActive = false;
 function fullScreen() {
     if (!storiesIsActive) {
+        if (isHintOn && !isHintActive) {
+            isHintActive = true;
+            hint.style.display = 'grid';
+            setTimeout(function() {
+                hint.style.display = 'none';
+                isHintActive = false;
+            }, 10000)
+        }
         storiesIsActive = true;
 
         let h, w, r;
@@ -107,6 +118,11 @@ function fullScreen() {
         storiesWindowed()
     }
 }
+
+hint.addEventListener('click', function() {
+    hint.style.display = 'none';
+    isHintOn = false;
+})
 
 // ТРИГЕРЫ
 function handleInteraction(event) {
