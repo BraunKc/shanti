@@ -15,26 +15,33 @@ mc.add(new Hammer.Press({ time: 150 }));
 document.addEventListener('DOMContentLoaded', function() {
     const storiesPlayer = document.getElementById('storiesPlayer');
     const sources = [
-        'videos/1.mp4',
-        'videos/2.mp4',
-        'videos/3.mp4',
-        'videos/4.mp4',
-        'videos/5.mp4',
-        'videos/6.mp4'
+        { webm: 'videos/1.webm', mp4: 'videos/1.mp4' },
+        { webm: 'videos/2.webm', mp4: 'videos/2.mp4' },
+        { webm: 'videos/3.webm', mp4: 'videos/3.mp4' },
+        { webm: 'videos/4.webm', mp4: 'videos/4.mp4' },
+        { webm: 'videos/5.webm', mp4: 'videos/5.mp4' },
+        { webm: 'videos/6.webm', mp4: 'videos/6.mp4' }
     ];
     let currentIndex = 0;
     let isTouching = false;
 
+    function getVideoSource(index) {
+        const source = sources[index];
+        const canPlayWebM = storiesPlayer.canPlayType('video/webm; codecs="vp8, vorbis"');
+        return canPlayWebM ? source.webm : source.mp4;
+    }
+
     // Предварительная загрузка видео
     const preloadedVideos = sources.map((src) => {
         const video = document.createElement('video');
-        video.src = src;
+        const canPlayWebM = video.canPlayType('video/webm; codecs="vp8, vorbis"');
+        video.src = canPlayWebM ? src.webm : src.mp4;
         video.preload = 'auto';
         return video;
     });
 
     function playVideo(index) {
-        storiesPlayer.src = sources[index];
+        storiesPlayer.src = getVideoSource(index);
         storiesPlayer.play();
     }
     function nextVideo() {
