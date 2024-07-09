@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     getNoAlcohol();
     getAlcohol();
     getCocktails();
-    getFood();
 
     setTimeout(function() {
+        getFood();
         loadingScreen.style.opacity = '0';
 
         setTimeout(function() {
