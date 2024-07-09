@@ -52,6 +52,7 @@
 }
 
 /* ----- HINT ----- */
+
 .hint768px { display: none; }
 #storiesHint {
     grid-template-columns: repeat(2, 1fr);
@@ -76,7 +77,7 @@
         width: 90vw;
         bottom: 10px;
     }
-    
+
     .hint768px { display: flex; }
     .hintPc { display: none; }
     #storiesHint {
