@@ -3,6 +3,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const loadingScreen = document.getElementById('loadingScreen');
     const body = document.body;
+
+    getNoAlcohol();
+    getAlcohol();
+    getCocktails();
+    getFood();
+
     setTimeout(function() {
         loadingScreen.style.opacity = '0';
 
@@ -111,8 +117,6 @@ function getNoAlcohol(btn) {
         typeBtnsColor(btn);
     })
 }
-
-getFood();
 
 function typeBtnsColor(activeBtn) {
     const buttons = document.querySelectorAll('.typeBtn');

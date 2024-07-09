@@ -25,6 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     let isTouching = false;
 
+    // Предварительная загрузка видео
+    const preloadedVideos = sources.map((src) => {
+        const video = document.createElement('video');
+        video.src = src;
+        video.preload = 'auto';
+        return video;
+    });
+
     function playVideo(index) {
         storiesPlayer.src = sources[index];
         storiesPlayer.play();
