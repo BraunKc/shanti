@@ -9,7 +9,7 @@ var storiesIsActive = false;
 
 var mc = new Hammer(storiesPlayer);
 mc.add(new Hammer.Tap());
-mc.add(new Hammer.Press({ time: 100 }));
+mc.add(new Hammer.Press({ time: 150 }));
 
 document.addEventListener('DOMContentLoaded', function() {
     const storiesPlayer = document.getElementById('storiesPlayer');
