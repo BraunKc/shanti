@@ -301,7 +301,9 @@ footer a {
     .social768px, .contacts768px {
         display: flex;
         flex-direction: column;
-        gap: 7vw;
+    }
+    .social768px *:first-child, .contacts768px *:first-child {
+        padding-bottom: 7vw;
     }
     .linksFooter *, .social768px *, .contacts768px * {
         text-wrap: nowrap;
