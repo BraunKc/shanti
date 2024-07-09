@@ -3,7 +3,7 @@
     background: #000;
 }
 .transition.last {
-    height: 50vh; width: 100%;
+    width: 100%;
     position: relative;
     background: #e6e2d7;
 }
