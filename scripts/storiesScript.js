@@ -5,6 +5,7 @@ storiesVideo = document.getElementById('storiesVideo');
 progressContainer = document.getElementById('progressContainer');
 progressBar = document.getElementById('progressBar');
 hint = document.getElementById('storiesHint');
+hintBtn = document.getElementById('storiesHintBtn');
 
 var storiesIsActive = false;
 
@@ -90,6 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // УМЕНЬШЕНИЕ ВИДЕО
 function storiesWindowed() {
     storiesIsActive = false;
+
+    isHintBtnActive = false;
+    isActiveHint = false;
+    hintBtn.style.display = 'none';
+    hint.style.display = 'none';
+
     stories.style.removeProperty('height');
     stories.style.removeProperty('width');
     storiesPlayer.style.removeProperty('border-radius');
@@ -100,16 +107,12 @@ function storiesWindowed() {
 
 // ОТКРЫТИЕ ВИДЕО НА ВЕСЬ ЭКРАН
 let isHintOn = true;
-let isHintActive = false;
+let isHintBtnActive = false;
 function fullScreen() {
     if (!storiesIsActive) {
-        if (isHintOn && !isHintActive) {
-            isHintActive = true;
-            hint.style.display = 'grid';
-            setTimeout(function() {
-                hint.style.display = 'none';
-                isHintActive = false;
-            }, 10000)
+        if (isHintOn && !isHintBtnActive) {
+            isHintBtnActive = true;
+            hintBtn.style.display = 'flex';
         }
         storiesIsActive = true;
 
@@ -134,10 +137,16 @@ function fullScreen() {
     }
 }
 
-hint.addEventListener('click', function() {
-    hint.style.display = 'none';
-    isHintOn = false;
-})
+isActiveHint = false;
+function storiesHint() {
+    if (!isActiveHint) {
+        isActiveHint = true;
+        hint.style.display = 'grid';
+    } else {
+        isActiveHint = false;
+        hint.style.display = 'none';
+    }
+}
 
 // ТРИГЕРЫ
 function handleInteraction(event) {
