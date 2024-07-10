@@ -74,6 +74,7 @@
     color: #fdfff5;
     font-family: Montserrat;
     font-size: 25px;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {  
